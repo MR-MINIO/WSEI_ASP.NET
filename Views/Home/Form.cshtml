@@ -1,0 +1,57 @@
+﻿@model Formulaz.Models.Dane
+
+   <form asp-action="Form" method="post">
+      <div asp-validation-summary="All"></div>
+
+      <div>
+          <label asp-for="Imie">Twoje imie</label>
+          <input asp-for="Imie"/>
+      </div>
+
+    <div>
+        <label asp-for="Nazwisko">Twoje Nazwisko</label>
+        <input asp-for="Nazwisko" />
+    </div>
+
+      <div>
+          <label asp-for="Email">Twoj Email</label>
+          <input asp-for="Email" type="email"/>
+      </div>
+
+      <div>
+        <label asp-for="Haslo">Haslo</label>
+        <input asp-for="Haslo" type="password" />
+      </div>
+
+    <div>
+        <label asp-for="Haslo2">Haslo2</label>
+        <input asp-for="Haslo2" type="password"/>
+    </div>
+
+      <div>
+        <label asp-for="NumerTelefonu">NumerTelefonu</label>
+        <input asp-for="NumerTelefonu" type="tel" />
+      </div>
+
+    <div>
+        <label asp-for="Wiek">Wiek</label>
+        <input asp-for="Wiek"/>
+    </div>
+
+    <select asp-for="Miasto"
+            asp-items="Html.GetEnumSelectList<Miasta>()">
+    </select>
+
+    <div>
+          <input type="submit"/>
+      </div>
+  </form> 
+
+@* @using (Html.BeginForm("Form", "Home", FormMethod.Post)){
+    @Html.ValidationSummary(false, "", new {@class = "text-danger"})
+    <p>Twoje imie: @Html.TextBoxFor(a => a.Imie)</p>
+    <p>Twoj Email: @Html.TextBoxFor(a => a.Email)</p>
+    <p>Temat: @Html.TextBoxFor(a => a.Temat)</p>
+    <p>Tresc: @Html.TextBoxFor(a => a.Tresc)</p>
+    <input type="submit"/>
+} *@
